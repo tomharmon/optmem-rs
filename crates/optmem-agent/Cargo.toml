@@ -1,0 +1,18 @@
+[package]
+name = "optmem-agent"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "Shared rmcp tool definitions and handlers for OptMem harness integrations"
+
+[dependencies]
+optmem = { path = "../..", version = "0.1.0" }
+chrono = "0.4"
+rmcp = { version = "3.5", default-features = false }
+schemars = "1"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[dev-dependencies]
+jsonschema = { version = "0.46", default-features = false }
+tempfile = "3"

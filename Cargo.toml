@@ -1,0 +1,30 @@
+[package]
+name = "optmem"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+description = "Append-only agent memory with a binary summary tree and pluggable storage"
+
+[workspace]
+members = ["crates/optmem-agent", "crates/optmem-mcp"]
+resolver = "3"
+
+[lib]
+name = "optmem"
+
+[[bin]]
+name = "memo"
+path = "src/main.rs"
+
+[dependencies]
+chrono = "0.4"
+clap = { version = "4", features = ["derive", "env"] }
+fs2 = "0.4"
+regex = "1"
+serde = { version = "1", features = ["derive"] }
+tempfile = "3"
+thiserror = "2"
+toml = "1"
+
+[target.'cfg(unix)'.dependencies]
+xdg = "3"
